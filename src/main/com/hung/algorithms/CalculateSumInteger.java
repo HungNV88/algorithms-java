@@ -8,7 +8,10 @@ public class CalculateSumInteger {
      * @param number integer number
      * @return summary of even number
      */
-    public static int sumEvenNumberWithIf(int number) {
+    public int sumEvenNumberWithIf(int number) {
+        if(number < 0){
+            return number;
+        }
         int sumEven = 0;
         for (int i = 0; i <= number; i++) {
             if (i % 2 == 0) {
@@ -24,7 +27,7 @@ public class CalculateSumInteger {
      * @param number integer number
      * @return summary of even number
      */
-    public static int sumEvenNumberNoIf(int number) {
+    public int sumEvenNumberNoIf(int number) {
         int sumEven = 0;
         for (int i = 2; i <= number; i = i + 2) {
             sumEven += i;
@@ -38,7 +41,7 @@ public class CalculateSumInteger {
      * @param number integer number
      * @return summary of decimal number
      */
-    public static float sumDecimalNumber(int number) {
+    public float sumDecimalNumber(int number) {
         float sumDecimal = 0.0f;
         for (int i = 1; i <= number; i++) {
             sumDecimal += (float) 1 / i;
@@ -52,10 +55,10 @@ public class CalculateSumInteger {
      * @param number integer number
      * @return summary of decimal number
      */
-    public static float sumDecimalFactorialNumber(int number) {
+    public float sumDecimalFactorialNumber(int number) {
         float sumDecimal = 0.0f;
         for (int i = 1; i <= number; i++) {
-            sumDecimal += (float) 1 / Factorial.factorial(i);
+            sumDecimal += (float) 1 / (float) Factorial.factorial(i);
         }
 
         return sumDecimal;
@@ -67,7 +70,7 @@ public class CalculateSumInteger {
      * @param number integer number
      * @return summary of character letter in number
      */
-    public static int sumNumberLetterWay1(int number) {
+    public int sumNumberLetterWay1(int number) {
         int sumNumberLetter = 0;
         String numLetter = String.valueOf(number);
         char[] arrNumber = numLetter.toCharArray();
@@ -84,7 +87,7 @@ public class CalculateSumInteger {
      * @param number integer number
      * @return summary of character letter in number
      */
-    public static int sumNumberLetterWay2(int number) {
+    public int sumNumberLetterWay2(int number) {
         int sumNumberLetter = 0;
         while (number > 0) {
             sumNumberLetter += number % 10;
